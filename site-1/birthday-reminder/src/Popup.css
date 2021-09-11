@@ -1,0 +1,30 @@
+.general-container{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.342);
+    padding: 100px;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.3s ease-in;
+}
+.pop-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3px;
+    width: 30%;
+    height: 30%;
+    padding: 100px;
+    transition: 0.3s ease-in;
+}
+.pop-container > input{
+    margin: 10px;
+    padding: 10px;
+}
+.close{
+    margin: 0%;
+}
