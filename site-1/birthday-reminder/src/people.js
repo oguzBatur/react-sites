@@ -25,7 +25,7 @@ export const people=[
 		id:4,
 		name:'Batuhan Üğdül',
 		age:24,
-		img:'https://c8.alamy.com/comp/BCEWTK/portrait-of-turkish-man-BCEWTK.jpg',
+		img:'https://scontent.fteq3-2.fna.fbcdn.net/v/t1.6435-9/89473191_672350710256504_2329232387495428096_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=ZTAEHkOMjjQAX91OCwr&_nc_ht=scontent.fteq3-2.fna&oh=11245e932d8f3b04ce11321ee37bc8db&oe=61667584',
 		date: '1998-01-27'
 
 	},

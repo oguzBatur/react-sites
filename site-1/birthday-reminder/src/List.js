@@ -3,18 +3,18 @@ import {people} from './people.js';
 import './List.css';
 import { useState } from 'react';
 
-const List = (props) => {
+const List = ({birthdayChecker}) => {
 	const [buttonPopup, setButtonPopup] = useState(false);
 	const peopleList = people.map(person => {
+	const filterPeople = birthdayChecker(person.date)
 		return buttonPopup === false ?(
-
 			<div className='list-container'>
 				<div className='photo'>
-					<img src={person.img}/>
-				</div>	
+					<img alt={person.name} src={person.img}/>
+				</div>
 				<div className='list'>
 					<h3 className='name'>{person.name}</h3>
-					<h4 className = 'age'>{person.age} Years Old!</h4> 	
+					<h4 className = 'age'>{person.age} Years Old!</h4>
 					<p className='birth-date'>{person.date} is the Birthday!</p>
 				</div>
 				<button onClick={() => setButtonPopup(true)} className='delete'>Delete</button>

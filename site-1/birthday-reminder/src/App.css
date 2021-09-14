@@ -29,3 +29,8 @@ button{
   flex-direction: column;
   border-radius: 5px;
 }
+.buttons{
+
+  border-radius: 50px;
+
+}
