@@ -5,32 +5,31 @@ import { useState } from 'react';
 
 function App() {
  	const [buttonPopup, setButtonPopup] = useState(false);
-	function birthdayChecker(event){
+	let birthdayCounter = 0;
+  function birthdayChecker(event){
     console.log(event);
-    let currentMonth = new Date().getUTCMonth();
-    let currentDay = new Date().getUTCDay();
-    if(event.substring(5,7) === currentMonth && event.substring(8,10) === currentDay){
-      console.log('Birthday today!');
+    let currentMonth = new Date().getMonth() + 1;
+    let currentDay = new Date().getDate();
+    if(event.substring(5,7) == currentMonth && event.substring(8,10) == currentDay){
+      birthdayCounter++;
+      console.log(birthdayCounter);
+      
     }
     else{
-      console.log(event.substring(5,7));
-      console.log(event.substring(8,10));
-      console.log(currentMonth);
-      console.log(currentDay);
+      console.log('There seems to be no birthday today...')
     }
 	} 
+  const clearAll = clear => {
+      let elements = document.getElementsByClassName('')
+  }
   return(
     <div>
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup}/>
       <div className='container'>
       <div className='RealContainer'>
-        <h3  >0 birthdays today</h3>
+        <h3>{birthdayCounter} birthdays today</h3>
         <List  birthdayChecker={birthdayChecker}/>
-        <div>
-          <button className='buttons' onClick={() => setButtonPopup(true)} >Add a Birthday!</button>
-          <button className='buttons'>Clear All</button>
-         
-        </div>
+        <button className='buttons' onClick={() => setButtonPopup(true)} >Add a Birthday!</button>
       </div>
     </div>
     

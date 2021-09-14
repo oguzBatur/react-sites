@@ -5,9 +5,14 @@ import { useState } from 'react';
 
 const List = ({birthdayChecker}) => {
 	const [buttonPopup, setButtonPopup] = useState(false);
+	const olayDinleyici = (olay) => {
+		olay.target.parentNode.parentNode.removeChild(olay.target.parentNode);
+
+	}
 	const peopleList = people.map(person => {
-	const filterPeople = birthdayChecker(person.date)
-		return buttonPopup === false ?(
+		const filterPeople = birthdayChecker(person.date)
+		return (
+			
 			<div className='list-container'>
 				<div className='photo'>
 					<img alt={person.name} src={person.img}/>
@@ -17,16 +22,21 @@ const List = ({birthdayChecker}) => {
 					<h4 className = 'age'>{person.age} Years Old!</h4>
 					<p className='birth-date'>{person.date} is the Birthday!</p>
 				</div>
-				<button onClick={() => setButtonPopup(true)} className='delete'>Delete</button>
+				<button onClick={olayDinleyici} className='delete'>Delete</button>
 			</div>
 			
-		) : ' '	
+		) 
 		
-
 	});
+
+	
+
+
+
 	return (
 		<div>
 			{peopleList}
+
 		</div>
 
 

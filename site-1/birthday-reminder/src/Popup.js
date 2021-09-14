@@ -17,6 +17,11 @@ const Popup = (props) => {
 		console.log(peopleInfo);
 		peopleInfo[0].id = people.length + 1 ;
 		peopleInfo[0].age =  currentTime.getFullYear() - peopleInfo[0].date.substring(0,4); 
+		peopleInfo[0].img.trimStart();
+		peopleInfo[0].img.trimEnd();
+		if(peopleInfo[0].img == '' || peopleInfo[0].img == ' '){
+			peopleInfo[0].img = `https://robohash.org/${peopleInfo[0].name}`
+		}
 		people.push(peopleInfo[0]);
 		console.log(people);
 	}
